@@ -15,4 +15,24 @@ function initializePage() {
 
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
+    $("a.thumbnail").click(projectClick);
+
 }
+
+
+/* 
+ * Define the projectClick function:
+ * what occurs when user clicks on a "project" class object?
+ */
+funnction projectClick(e) {
+
+    // prevent the current page from reloading:
+    e.preventDefault();
+
+    $(this).css("background-color", "#7FFF00");
+
+    var containingProject = $(this).closest(".project");
+    containingProject.append("<div class='project-description'><p>Description of the project.</p></div>");
+
+}
+
